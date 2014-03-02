@@ -57,4 +57,4 @@ function Read($url){
 }
 
 var_dump(login("https://coinotron.com/coinotron/AccountServlet?action=logon",'user', 'pass'));
-var_dump(Read("https://coinotron.com/coinotron/AccountServlet?action=home")); die();
+var_dump(Read("https://coinotron.com/coinotron/AccountServlet?action=myaccount")); die();
