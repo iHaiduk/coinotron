@@ -7,6 +7,7 @@ class Coinotron
 {
 	const URL_LOGIN = 'https://coinotron.com/coinotron/AccountServlet?action=logon';
 	const URL_ACCOUNT = 'https://coinotron.com/coinotron/AccountServlet?action=myaccount';
+    const URL_LOGOUT  = 'https://coinotron.com/coinotron/AccountServlet?action=logoff';
 
 	const COIN_LTC = 'LTC';
 	const COIN_FTC = 'FTC';
@@ -123,8 +124,24 @@ class Coinotron
 		}
 		//*/
 
+        //* Users
+        $rows = $doc->find('.Internal', -2)->find('tr');
+        foreach ($rows as $row) {
+            if ($row->find('thead')) {
+                continue;
+            }
+            $data[$coin]['users'][]= array(
+                'user' => trim($row->find('td', 1)->plaintext),
+                'pass' => trim($row->find('td', 2)->plaintext),
+                'speed' => trim($row->find('td', 3)->plaintext),
+                'last' => trim($row->find('td', 4)->plaintext),
+            );
+
+        }
+        //*/
+
 		//* PAYOUTS
-		$rows = $doc->find('.Internal', -1)->find('tr');
+		$rows = $doc->find('.MaxWidth', -1)->find('tr');
 		foreach ($rows as $row) {
 			if ($row->find('thead')) {
 				continue;
