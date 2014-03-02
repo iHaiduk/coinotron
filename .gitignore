@@ -1,3 +1,11 @@
 assets/
 protected/runtime/
 themes/classic/views/
+*.name
+*.iml
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/scopes/scope_settings.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/encodings.xml

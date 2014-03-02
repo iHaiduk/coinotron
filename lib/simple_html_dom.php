@@ -54,7 +54,7 @@ define('HDOM_QUOTE_SINGLE', 1);
 define('HDOM_QUOTE_NO',	 3);
 define('HDOM_INFO_BEGIN',   0);
 define('HDOM_INFO_END',	 1);
-define('HDOM_INFO_QUOTE',   2);
+define('HDOM_INFO_QUOTE',  2);
 define('HDOM_INFO_SPACE',   3);
 define('HDOM_INFO_TEXT',	4);
 define('HDOM_INFO_INNER',   5);

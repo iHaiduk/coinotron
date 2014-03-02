@@ -61,7 +61,7 @@ class Coinotron
 
 		$doc = str_get_html($html);
 		if ($error = $doc->find('#content font[color="red"]', 0)) {
-			throw new Exception('Login error: ' . $error->plaintext, 3); ;
+            throw new Exception('Login error: ' . $error->plaintext, 3);
 		}
 	}
 
@@ -70,8 +70,6 @@ class Coinotron
 		$c = new Curl();
 		$c->setOption('url', self::URL_ACCOUNT);
 		$html = $c->get();
-
-        var_dump($html);
 
 		$doc = str_get_html($html);
 
@@ -154,9 +152,5 @@ class Coinotron
 		//*/
 
 		return $data;
-	}
-
-	private function parsePoolInfo ($doc)
-	{
 	}
 }
